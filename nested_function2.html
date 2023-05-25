@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>NESTED FUNCTION</title>
+  </head>
+  <body>
+    <p id="demo"></p>
+    <button onclick="main(10,20)">CLICK ME</button>
+    <button onclick="cal()">CLICK ME</button>
+    <button onclick="test()">CLICK ME</button>
+    <script>
+
+function main(a,b){
+    let sum=()=>{
+         console.log("add",a+b);
+    }
+    function sub(){
+        sum();
+       console.log ("minus",a-b);
+    }
+    function mul(){
+        sub();
+       console.log ("into",a*b);
+    }
+    function div(){
+        mul();
+        console.log("division",a/b);
+    }
+    function inc(){
+        div();
+        console.log("increment",a+=b)
+    }
+    function dec(){
+        inc();
+   console.log("decrement",a-=b)
+    }
+    function per(){
+        dec();
+        console.log("percentage",a%b);
+
+    }
+    per();
+}
+ 
+// ====================================
+
+function cal(){
+    function z(){
+    let c=40; d=20;
+    let ans=c/d
+    console.log("division",ans);
+
+function r(){
+    let e=2,f=3
+    let ans1 =e*f
+    console.log("mul",ans1)
+function t(){
+    let w=9,q=6
+    let ans2=w-q
+    console.log("sub",ans2)
+
+function u(){
+    let o=6,p=4
+    let ans3=o%p
+    console.log("mod",ans3)
+    function  totalResult(a,b,c,d){
+        let finalresult=ans+ans1+ans2+ans3;
+        console.log("total",finalresult)
+    }
+    totalResult(ans,ans1,ans2,ans3);
+}   
+u(); 
+}
+t();    
+}
+r();
+}
+z();
+}
+
+// ================================================
+function test(){
+function cal1(){
+    var result=0;
+    
+    function add_two(a,b) {
+        result = a+b;
+        // return result;
+    }
+    function sub(c) {
+        result -= c;
+        // return result;
+    }
+    function mul(c) {
+        result *= c;
+        // return result;
+    }
+    function divi(c) {
+        result /= c;
+        // return result;
+    }
+    function getTotalResult() {
+        return result;
+        // return result;
+    }
+    return {
+        add_two,
+        sub,
+        mul,
+        divi,
+        getTotalResult
+    };
+    // add_two(2,3)
+    // sub_two(result)
+}
+   const calcul=cal1();
+   calcul.add_two(5,5)
+   calcul.sub(6);
+   calcul.mul(6);
+   calcul.divi(8);
+ const totalResult=calcul.getTotalResult();
+ console.log(totalResult);
+}
+
+// =================================ARROW FUNCTION ======================
+
+    let a_sum=(j,s)=>j+s;
+    let a_mul=(j,s)=>j*s;
+    let a_divi=(j,s)=>j/s;
+    let result=a_sum(5,6);
+    console.log("sum",result);
+let result1=a_mul(4,8)
+console.log("multi",result1);
+let result2=a_divi(60,20)
+console.log("division",result2);
+// let result1= a_mul();
+
+
+   
+   
+
+    </script>
+  </body>
+</html>
